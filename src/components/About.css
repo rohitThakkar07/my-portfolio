@@ -1,0 +1,127 @@
+ .app-container {
+          background-color: #1c1c1c;
+          color: #e0e0e0;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          min-height: 100vh;
+        }
+
+        .navbar-custom {
+          background-color: #1a1a1a;
+          border-bottom: 1px solid #333;
+        }
+
+        .nav-link-custom {
+          color: #e0e0e0 !important;
+          transition: color 0.3s ease;
+        }
+        
+        .nav-link-custom:hover {
+          color: #fff !important;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+          font-weight: 600;
+          margin-top: 5rem;
+          margin-bottom: 3rem;
+          text-align: center;
+          position: relative;
+        }
+
+        .timeline-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 2rem;
+          padding: 1.5rem;
+          background-color: #242424;
+          border-radius: 10px;
+          border: 1px solid #333;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          position: relative;
+          z-index: 1;
+        }
+
+        .timeline-item-icon {
+          font-size: 2rem;
+          color: #00bcd4; /* A shade of cyan for contrast */
+          margin-right: 1.5rem;
+          background-color: #1a1a1a;
+          padding: 10px;
+          border-radius: 50%;
+          box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+          min-width: 44px; /* Fix for icon size */
+          min-height: 44px; /* Fix for icon size */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .timeline-content h4 {
+          color: #fff;
+          font-weight: 500;
+        }
+
+        .timeline-content p {
+          color: #aaa;
+          font-size: 0.95rem;
+        }
+
+        .timeline-date {
+          font-size: 0.9rem;
+          color: #888;
+          align-self: flex-start;
+          margin-left: auto;
+          min-width: 120px;
+          text-align: right;
+        }
+        
+        .timeline-container {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25px;
+            width: 2px;
+            height: 100%;
+            background-color: #444;
+            z-index: 0;
+        }
+
+        .passions-container {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 20px;
+          margin-top: 2rem;
+        }
+
+        .passion-card {
+          flex: 1 1 300px;
+          background-color: #242424;
+          border-radius: 10px;
+          border: 1px solid #333;
+          padding: 2rem;
+          text-align: center;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .passion-card-icon {
+          font-size: 3rem;
+          color: #e0e0e0;
+          margin-bottom: 1rem;
+        }
+
+        .passion-card h5 {
+          color: #fff;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .passion-card p {
+          color: #aaa;
+          font-size: 0.9rem;
+        }

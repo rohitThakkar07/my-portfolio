@@ -1,0 +1,100 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Light / Dark Theme */
+.dark-theme {
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(90deg, #6ee7b7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth transitions */
+.dark-theme,
+.light-theme {
+  transition: background-color 0.4s, color 0.4s;
+}
+
+
+
+
+
+ :root{
+      --follower-size: 36px;      /* change size here */
+      --follower-color: #1db954;  /* circle color */
+      --follower-glow: 18px;      /* glow blur */
+      --trail-ease: 0.18;         /* lower = slower trailing */
+    }
+
+    /* make page fill viewport for demo */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,#071213 0%, #0b1a1a 100%);
+      color:#e6fff8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* demo content */
+    .hero {
+      text-align:center;
+      max-width:900px;
+      padding:40px;
+    }
+    h1{ font-size: clamp(24px, 4vw, 40px); margin:0 0 8px; }
+    p { color: #9aa6b0; margin:0 0 18px; }
+
+    /* Cursor follower */
+    .cursor-follower {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: var(--follower-size);
+      height: var(--follower-size);
+      border-radius: 50%;
+      pointer-events: none;               /* click-through */
+      transform: translate(-50%, -50%) scale(1);
+      will-change: transform, opacity;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      mix-blend-mode: normal;
+      transition: background-color 160ms ease, transform 160ms ease;
+      backdrop-filter: blur(0px);
+    }
+
+    .cursor-follower::after{
+      content: "";
+      display:block;
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.28), rgba(255,255,255,0.06) 10%, transparent 40%),
+                  var(--follower-color);
+      box-shadow: 0 6px 22px rgba(29,185,84,0.14), 0 0 var(--follower-glow) rgba(29,185,84,0.08);
+      opacity: 1;
+    }
+
+    /* optional: scale on mouse down or when .active added */
+    .cursor-follower.active {
+      transform: translate(-50%, -50%) scale(1.28);
+    }
+
+    /* smaller on touch devices (optional) */
+    @media (hover: none) and (pointer: coarse){
+      :root { --follower-size: 28px; --trail-ease: 0.28; }
+    }
