@@ -5,53 +5,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Navbar */
-/* Header container */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #0d0d0d;
-  /* black background */
-  color: white;
-  padding: 15px 50px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-/* Logo */
-.logo h2 {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* Navbar */
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #bbb;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  color: #fff;
-  font-weight: bold;
-}
-
-/* Theme toggle icon */
-.theme-toggle {
-  font-size: 20px;
-  cursor: pointer;
-}
+/* Note: header/navbar styles moved to `Nav.css` to avoid duplication/conflicts */
 
 
  .container h1 {
@@ -181,4 +135,59 @@ footer a:hover svg {
 .custom-btn svg {
   margin-right: 10px;
   filter: brightness(1.5);
+}
+
+
+
+/* ===== Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Additional responsive rules and general styles are handled elsewhere; this file contains page-specific styles */
+
+/* Responsive adjustments for Portfolio page */
+@media (max-width: 1200px) {
+  .container h1 { font-size: 3.2rem; }
+}
+
+@media (max-width: 992px) {
+  .container h1 { font-size: 2.6rem; }
+  .download_resume .card { padding: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .container h1 { font-size: 2rem; }
+
+  /* Hero buttons stack on small screens */
+  .d-flex.flex-column.flex-sm-row {
+    flex-direction: column !important;
+    gap: 12px;
+  }
+
+  #btnWhite, #btnBorder {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Cards become full width and stack */
+  .row.g-4 .col-md-4, .row.g-4 .col-md-6, .row.g-4 .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card { padding: 1.25rem; }
+
+  /* Reduce gaps for tight mobile screens */
+  .row.g-4 { gap: 16px; }
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter, .page-enter .container > * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

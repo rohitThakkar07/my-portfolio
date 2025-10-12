@@ -72,8 +72,6 @@ const About = () => {
       <div className="container py-5 text-center">
         <div className="section-title">Work Ethic & Mindset</div>
       </div>
-      
->
     </>
   )
 }

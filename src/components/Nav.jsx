@@ -1,28 +1,44 @@
-import React from 'react'
-import { FaMoon } from "react-icons/fa";
+import React, { useState } from 'react';
+import { FaMoon, FaBars } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import './Nav.css';
 
 const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
-     <header className="header">
+    <header className="header">
       <div className="logo">
         <h2>Rohit Thakkar</h2>
       </div>
 
-      <nav className="navbar">
+      {/* Hamburger for mobile */}
+      <button className="menu-toggle" onClick={handleMenuToggle}>
+        <FaBars />
+      </button>
+
+      <nav className={`navbar ${menuOpen ? "active" : ""}`}>
         <ul>
-          <li><Link to="/" className="active">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><Link to="/" onClick={closeMenu} className="active">Home</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+          <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
         </ul>
       </nav>
 
-      <div className="theme-toggle">
+      <button className="theme-toggle">
         <FaMoon />
-      </div>
+      </button>
     </header>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
