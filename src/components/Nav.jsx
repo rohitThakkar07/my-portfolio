@@ -7,15 +7,13 @@ const Header = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container>
-        {/* Logo */}
+       
         <Navbar.Brand as={Link} to="/my-portfolio/">
           Rohit Thakkar
         </Navbar.Brand>
 
-        {/* Toggle button for mobile */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        {/* Navbar links */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/my-portfolio/" className="nav-link-custom">
