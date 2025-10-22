@@ -9,15 +9,16 @@ import About from './components/About.jsx';
 import Projects from './components/Projects.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import CustomCursor from './components/CustomeCursor.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Portfolio /> },   // ✅ Home page
-      { path: "about", element: <About /> },
-      { path: "projects", element: <Projects /> },
+      { path:"/my-portfolio/", index: true, element: <Portfolio /> }, 
+      { path: "/about", element: <About /> },
+      { path: "/projects", element: <Projects /> },
     ],
   },
 ])
@@ -26,5 +27,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CustomCursor/>
     <RouterProvider router = {router}/>
+    
   </StrictMode>,
 )

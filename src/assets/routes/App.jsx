@@ -7,7 +7,6 @@ const App = () => {
   const location = useLocation()
   const [enter, setEnter] = useState(false)
 
-  // toggle enter class on each route change to retrigger CSS animation
   useEffect(() => {
     setEnter(false)
     const t = setTimeout(() => setEnter(true), 10)
@@ -19,6 +18,7 @@ const App = () => {
       <Nav />
       <main className={`content-offset ${enter ? 'page-enter' : ''}`}>
         <Outlet />
+        
       </main>
       <Footer />
     </>

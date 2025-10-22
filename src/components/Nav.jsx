@@ -1,44 +1,40 @@
-import React, { useState } from 'react';
-import { FaMoon, FaBars } from "react-icons/fa";
+import React from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Nav.css';
+import './Nav.css'; 
 
-const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-
+const Header = () => {
   return (
-    <header className="header">
-      <div className="logo">
-        <h2>Rohit Thakkar</h2>
-      </div>
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+      <Container>
+        {/* Logo */}
+        <Navbar.Brand as={Link} to="/my-portfolio/">
+          Rohit Thakkar
+        </Navbar.Brand>
 
-      {/* Hamburger for mobile */}
-      <button className="menu-toggle" onClick={handleMenuToggle}>
-        <FaBars />
-      </button>
+        {/* Toggle button for mobile */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      <nav className={`navbar ${menuOpen ? "active" : ""}`}>
-        <ul>
-          <li><Link to="/" onClick={closeMenu} className="active">Home</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-          <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
-          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-        </ul>
-      </nav>
-
-      <button className="theme-toggle">
-        <FaMoon />
-      </button>
-    </header>
+        {/* Navbar links */}
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/my-portfolio/" className="nav-link-custom">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" className="nav-link-custom">
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/projects" className="nav-link-custom">
+              Projects
+            </Nav.Link>
+            <Nav.Link href="#contact" className="nav-link-custom">
+              Contact
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Nav;
+export default Header;

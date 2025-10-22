@@ -4,6 +4,7 @@ import "./About.css"
 const About = () => {
   return (
     <>
+    
     <div className="container py-5">
         <div className="section-title">My Coding Journey</div>
         <div className="timeline-container">

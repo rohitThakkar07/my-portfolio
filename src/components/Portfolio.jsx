@@ -1,26 +1,13 @@
 import './Portfolio.css';
 import myResumePDF from '../assets/Resume.pdf';
 import { Link } from 'react-router-dom';
-// import myResumeDOC from '../assets/Resume.docx';
 
 const Portfolio = () => {
     return (
         <>
-            {/* Toast Container for Popups  */}
-            <div className="toast-container position-fixed top-0 end-0 p-3">
-                <div id="downloadToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div className="d-flex">
-                        <div className="toast-body text-bg-primary rounded-pill">
-                            Download started!
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
+     
             {/* <!-- Hero Section --> */}
-            <section id="home" className="d-flex align-items-center justify-content-center text-center min-vh-100 pt-5">
+            <section id="home" className="d-flex align-items-center justify-content-center text-center min-vh-100">
                 <div className="container px-4">
                     <h1 className="display-1 mb-4 ">Hey, I'm Rohit Thakkar</h1>
                     <p className="fs-4 text-neutral-400 mb-5 ">Designer & Developer</p>
@@ -176,18 +163,25 @@ const Portfolio = () => {
                             </div>
                         </div>
                         <div className="d-flex justify-content-center flex-column flex-sm-row g-3">
-                            <a
-                                href={myResumePDF}
-                                download
-                                id='btnWhite'
-                                className=" btn px-4 fw-semibold me-sm-3 mb-3 mb-sm-0 shadow-lg d-flex align-items-center justify-content-center"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-download me-2" viewBox="0 0 16 16">
-                                    <path d="M.5 9.9a.5.5 0 01.5.5v2.5a.5.5 0 00.5.5h10a.5.5 0 00.5-.5v-2.5a.5.5 0 011 0v2.5A1.5 1.5 0 0112.5 15h-10A1.5 1.5 0 01.5 13.5v-2.5a.5.5 0 01.5-.5z" />
-                                    <path d="M7.646 11.854a.5.5 0 00.708 0l3-3a.5.5 0 00-.708-.708L8.5 10.293V1.5a.5.5 0 00-1 0v8.793L5.354 8.146a.5.5 0 10-.708.708l3 3z" />
-                                </svg>
-                                <span>Download PDF</span>
-                            </a>
+                          <a
+        href={myResumePDF}
+        download
+        className="btn btn-primary px-4 fw-semibold me-sm-3 mb-3 mb-sm-0 shadow-lg d-flex align-items-center justify-content-center"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          className="bi bi-download me-2"
+          viewBox="0 0 16 16"
+        >
+          <path d="M.5 9.9a.5.5 0 01.5.5v2.5a.5.5 0 00.5.5h10a.5.5 0 00.5-.5v-2.5a.5.5 0 011 0v2.5A1.5 1.5 0 0112.5 15h-10A1.5 1.5 0 01.5 13.5v-2.5a.5.5 0 01.5-.5z" />
+          <path d="M7.646 11.854a.5.5 0 00.708 0l3-3a.5.5 0 00-.708-.708L8.5 10.293V1.5a.5.5 0 00-1 0v8.793L5.354 8.146a.5.5 0 10-.708.708l3 3z" />
+        </svg>
+        
+        <span>Download PDF</span>
+      </a>
 
                             <a href="#" id="btnBorder" className=" px-4 fw-semibold shadow-lg d-flex align-items-center justify-content-center text-neutral-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-box-arrow-up-right me-2" viewBox="0 0 16 16">
@@ -202,6 +196,7 @@ const Portfolio = () => {
             </section>
 
             <script src="../assets/js/script.js"></script>
+            
         </>
     )
 }
