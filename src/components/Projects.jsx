@@ -17,8 +17,8 @@ const Projects = () => {
 
                     </div>
                     <br /><br />
-                    <a href="#" className="btn-live-preview me-3 p-3">View Live Site</a>
-                    <a href="#" className="btn-source-code">View Source Code</a>
+                    <a href="https://crypto-tools.wuaze.com/" className="btn-live-preview me-3 p-3">View Live Site</a>
+                    <a href="https://github.com/rohitThakkar07/crypto-tools" className="btn-source-code">View Source Code</a>
                 </div>
             </div>
 
